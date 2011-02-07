@@ -427,7 +427,7 @@ autocmd FocusLost * :wall
 :set ignorecase
 
 "Alias to open base directory
-map ,. :!open<Space>.
+map ,. :!open<Space>.<CR>
 
 "Open the current buffer 
-map ,k :up<CR>:execute ":!open<Space>".expand('%')
+map ,k :up<CR>:execute ":!open<Space>".expand('%')<CR>
