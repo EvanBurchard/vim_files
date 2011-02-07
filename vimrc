@@ -425,6 +425,8 @@ autocmd FocusLost * :wall
 
 "Search case insensitive by default
 :set ignorecase
+"If search with caps, only match caps
+:set smartcase
 
 "Alias to open base directory
 map ,. :!open<Space>.<CR><CR>
