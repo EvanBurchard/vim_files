@@ -4,7 +4,7 @@ filetype off
 "load pathogen managed plugins
 call pathogen#runtime_append_all_bundles()
 
-"Use Vim settings, rather then Vi settings (much better!).
+"Use Vim settings, rather then Vi settings 
 "This must be first, because it changes other options as a side effect.
 set nocompatible
 
@@ -303,11 +303,27 @@ nnoremap <silent> <C-f> :call FindInNERDTree()<CR>
 nnoremap <C-L> :nohls<CR><C-L>
 inoremap <C-L> <C-O>:nohls<CR>
 
+"set leader to ,
+let mapleader = ","
+
+map <Leader>gs :!git status<CR>
+map <Leader>gc :!git commit -m ""<LEFT>
+map <Leader>gac :!git commit -m -a ""<LEFT>
+map <Leader>ga :!git add .<CR>
+
+map <Leader>rc :!rails console<CR>
+map <Leader>rs :!rails server<CR>
+
+map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+
 "map to bufexplorer
 nnoremap <leader>b :BufExplorer<cr>
 
 "map to CommandT TextMate style finder
-nnoremap <leader>t :CommandT<CR>
+nnoremap <leader>, :CommandT<CR>
+
+"map to 
+nnoremap <leader>, :CommandT<CR>
 
 "map Q to something useful
 noremap Q gq
@@ -401,3 +417,17 @@ vmap <D-[> <gv
 vmap <D-]> >gv
 
 let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'} 
+
+" Map jj to <esc>
+imap jj <Esc>
+" Save if focus is lost
+autocmd FocusLost * :wall
+
+"Search case insensitive by default
+:set ignorecase
+
+"Alias to open base directory
+map ,. :!open<Space>.
+
+"Open the current buffer 
+map ,k :up<CR>:execute ":!open<Space>".expand('%')
