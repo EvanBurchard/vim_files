@@ -435,4 +435,4 @@ map <leader>. :!open<Space>.<CR><CR>
 map <leader>k :up<CR>:execute ":!open<Space>".expand('%')<CR><CR>
 
 "Run the current script
-map <leader>r :rubyf<space>%
+map <leader>r :w<CR>:rubyf<space>%<CR>
