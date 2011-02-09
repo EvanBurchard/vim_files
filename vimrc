@@ -429,7 +429,10 @@ autocmd FocusLost * :wall
 :set smartcase
 
 "Alias to open base directory
-map ,. :!open<Space>.<CR><CR>
+map <leader>. :!open<Space>.<CR><CR>
 
 "Open the current buffer 
-map ,k :up<CR>:execute ":!open<Space>".expand('%')<CR><CR>
+map <leader>k :up<CR>:execute ":!open<Space>".expand('%')<CR><CR>
+
+"Run the current script
+map <leader>r :rubyf<space>%
